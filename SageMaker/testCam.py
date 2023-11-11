@@ -9,6 +9,7 @@ while True:
         print("Unable to capture video")
         break
     cv2.imshow('frame', frame)
+    print(frame.shape)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()
