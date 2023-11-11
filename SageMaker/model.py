@@ -1,10 +1,13 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import numpy as np
+import boto3
+import sagemaker
+from sagemaker import get_execution_role
 
-class ResNet(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
+role = get_execution_role()
+sess = sagemaker.Session()
+bucket = sess.default_bucket()
+prefix = 'ic-transfer-learning'
+
+region = sess.boto_region_name
+image_name = sagemaker.image_uris.retrieve(region=boto3.Session().region_name, framework='image-classification')
+
+
