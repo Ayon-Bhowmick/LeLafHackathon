@@ -6,7 +6,7 @@ PIN_EN = 15
 PIN_D4 = 13
 PIN_D5 = 7
 PIN_D6 = 5
-PIN_D7 = 3
+PIN_D7 = 22
 PIN_BACKLIGHT = 19
 
 
@@ -19,4 +19,3 @@ lcd = LCD.Adafruit_CharLCD(PIN_RS, PIN_EN, PIN_D4, PIN_D5, PIN_D6, PIN_D7, PIN_C
 lcd.message('Hello\nworld!')
 sleep(5)
 lcd.clear()
-
