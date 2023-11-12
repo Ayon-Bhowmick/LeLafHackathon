@@ -2,10 +2,11 @@ import RPi.GPIO as GPIO
 from time import sleep, time
 import cv2
 
-PIN_R = 3
-PIN_GREEN = 11
+PIN_TRASH = 3
+PIN_REC = 11
 PIN_TRIG = 12
 PIN_ECHO = 18
+cap = cv2.VideoCapture(0)
 
 def distance():
     # set Trigger to HIGH
@@ -34,21 +35,23 @@ def distance():
 
 try:
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(PIN_R, GPIO.OUT)
-    GPIO.setup(PIN_GREEN, GPIO.OUT)
+    GPIO.setup(PIN_TRASH, GPIO.OUT)
+    GPIO.setup(PIN_REC, GPIO.OUT)
     GPIO.setup(PIN_TRIG, GPIO.OUT)
     GPIO.setup(PIN_ECHO, GPIO.IN)
 
     while 1:
         dist = distance()
         if dist < 10:
-            GPIO.output(PIN_R, GPIO.HIGH)
-            GPIO.output(PIN_GREEN, GPIO.LOW)
+            ret, frame = cap.read()
+            cv2.imshow("frame", frame)
         else:
-            GPIO.output(PIN_R, GPIO.LOW)
-            GPIO.output(PIN_GREEN, GPIO.HIGH)
+            GPIO.output(PIN_TRASH, GPIO.LOW)
+            GPIO.output(PIN_REC, GPIO.HIGH)
 
 except Exception as e:
     print(e)
 finally:
     GPIO.cleanup()
+    cap.release()
+    cv2.destroyAllWindows()
