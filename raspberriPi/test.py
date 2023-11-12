@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-PIN_YELLOW = 16
+PIN_YELLOW = 36
 try:
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(PIN_YELLOW, GPIO.OUT)
