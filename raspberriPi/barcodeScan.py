@@ -4,7 +4,11 @@ import time
 import  numpy as np
 import cv2
 import RPi.GPIO as GPIO
-from ..iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import setInput
+# from .iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import setInput
+
+from iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import ImgDataService
+
+
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -94,7 +98,7 @@ while(True):
         messageJSON = json.dumps(message)
 
         # call iotcore to send image to aws as a json
-        setInput(messageJSON)
+        ImgDataService.setInput(messageJSON)
 
         # wait a second
         time.sleep(5)
