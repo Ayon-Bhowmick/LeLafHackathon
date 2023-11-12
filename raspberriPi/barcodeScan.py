@@ -10,6 +10,6 @@ while True:
 	k = cv2.waitKey(1)
 	if k != -1:
 		break
-cv2.imwrite('../testimage', image)
+cv2.imwrite('/test', image)
 cam.release()
 cv2.destroyAllWindows()
