@@ -1,25 +1,20 @@
 import base64
 
+# Define global variables
+currImg = "None"
+awsresp = 'None'
+
 class ImgDataService():
-    def getImg():
-        data = ''
-        # with open("hua.jpg","rb") as f:
-        #     data = f.read()
-        # print(base64.b64encode(data))
-        print("BETE")
-
-    currImg = "None"
-
     def getImg():
         return currImg
 
     def setImg(input):
-        currImg = input   
+        global currImg
+        currImg = input
 
-    awsresp = 'None'
     def getresp():
-        return awsresp 
+        return awsresp
 
     def setresp(input):
+        global awsresp
         awsresp = input
-    

@@ -15,15 +15,15 @@ if [ ! -f ./root-CA.crt ]; then
 fi
 
 # Check to see if AWS Device SDK for Python exists, download if not
-# if [ ! -d ./aws_iot_device_sdk_python_v2 ]; then
+# if [ ! -d ./aws-iot-device-sdk-python-v2 ]; then
 #   printf "\nCloning the AWS SDK...\n"
-#   git clone https://github.com/aws/aws_iot_device_sdk_python_v2.git --recursive
+#   git clone https://github.com/aws/aws-iot-device-sdk-python-v2.git --recursive
 # fi
 
 # Check to see if AWS Device SDK for Python is already installed, install if not
 # if ! python3 -c "import awsiot" &> /dev/null; then
 #   printf "\nInstalling AWS SDK...\n"
-#   python3 -m pip install ./aws_iot_device_sdk_python_v2
+#   python3 -m pip install ./aws-iot-device-sdk-python-v2
 #   result=$?
 #   if [ $result -ne 0 ]; then
 #     printf "\nERROR: Failed to install SDK.\n"
