@@ -4,7 +4,7 @@ import time
 import  numpy as np
 import cv2
 import RPi.GPIO as GPIO
-from ..iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import setInput
+from .iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import setInput
 
 GPIO.setmode(GPIO.BOARD)
 
