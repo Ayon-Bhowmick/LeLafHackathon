@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep, time
 import cv2
 
-PIN_RED = 33
+PIN_RED = 3
 PIN_GREEN = 11
 PIN_TRIG = 12
 PIN_ECHO = 18
