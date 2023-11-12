@@ -1,11 +1,11 @@
 import Adafruit_CharLCD as LCD
 from time import sleep
 
-PIN_RS = 8
-PIN_EN = 15
-PIN_D4 = 13
-PIN_D5 = 7
-PIN_D6 = 5
+PIN_RS = 25
+PIN_EN = 24
+PIN_D4 = 23
+PIN_D5 = 17
+PIN_D6 = 16
 PIN_D7 = 22
 PIN_BACKLIGHT = 19
 
