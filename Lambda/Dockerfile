@@ -11,5 +11,6 @@ RUN apt-get update && \
     && apt-get clean
 
 RUN pip3 --no-cache-dir install --upgrade redis
+RUN pip3 --no-cache-dir install --upgrade pyzbar
 
 CMD ["/bin/bash"]

@@ -7,4 +7,4 @@ def lambda_handler(event, context):
     redis_port = os.environ['REDIS_PORT']
     r = redis.Redis(host=redis_host, port=redis_port)
 
-    print(r.get("my cached key"))
+    return {"res": r.get("my cached key")}
