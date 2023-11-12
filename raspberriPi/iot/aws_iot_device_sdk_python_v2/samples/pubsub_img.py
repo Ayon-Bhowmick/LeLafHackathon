@@ -1,16 +1,25 @@
 import base64
-def getImg():
-    data = ''
-    # with open("hua.jpg","rb") as f:
-    #     data = f.read()
-    # print(base64.b64encode(data))
-    print("BETE")
 
-currImg = "None"
+class ImgDataService():
+    def getImg():
+        data = ''
+        # with open("hua.jpg","rb") as f:
+        #     data = f.read()
+        # print(base64.b64encode(data))
+        print("BETE")
 
-def getImg():
-    return currImg
+    currImg = "None"
 
-def setInput(input):
-    currImg = input    
+    def getImg():
+        return currImg
+
+    def setInput(input):
+        currImg = input   
+
+    awsresp = 'None'
+    def getresp():
+        return awsresp 
+
+    def setresp(input):
+        awsresp = input
     
