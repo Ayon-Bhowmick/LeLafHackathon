@@ -42,7 +42,7 @@ try:
     while 1:
         dist = distance()
         if dist < 10:
-            GPIO.output(PIN_RED, GPIO.HIGH)
+            GPIO.output(PIN_R, GPIO.HIGH)
             GPIO.output(PIN_GREEN, GPIO.LOW)
         else:
             GPIO.output(PIN_R, GPIO.LOW)
