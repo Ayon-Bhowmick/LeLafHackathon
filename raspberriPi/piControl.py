@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep, time
 import cv2
 
-PIN_RED = 3
+PIN_R = 3
 PIN_GREEN = 11
 PIN_TRIG = 12
 PIN_ECHO = 18
@@ -34,7 +34,7 @@ def distance():
 
 try:
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(PIN_RED, GPIO.OUT)
+    GPIO.setup(PIN_R, GPIO.OUT)
     GPIO.setup(PIN_GREEN, GPIO.OUT)
     GPIO.setup(PIN_TRIG, GPIO.OUT)
     GPIO.setup(PIN_ECHO, GPIO.IN)
@@ -45,7 +45,7 @@ try:
             GPIO.output(PIN_RED, GPIO.HIGH)
             GPIO.output(PIN_GREEN, GPIO.LOW)
         else:
-            GPIO.output(PIN_RED, GPIO.LOW)
+            GPIO.output(PIN_R, GPIO.LOW)
             GPIO.output(PIN_GREEN, GPIO.HIGH)
 
 except Exception as e:
