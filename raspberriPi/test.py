@@ -58,6 +58,6 @@ try:
             GPIO.output(PIN_GREEN, GPIO.HIGH)
 
 except Exception as e:
-    print("error")
+    print(e)
 finally:
     GPIO.cleanup()
