@@ -1,47 +1,62 @@
+from base64 import b64encode
+import json
 import time
 import  numpy as np
 import cv2
 import RPi.GPIO as GPIO
-
-try:
-    GPIO.setmode(GPIO.BOARD)
-
-    PIN_TRIGGER = 18
-    PIN_ECHO = 24
-    PIN_REDLED = 13
-    PIN_YELLOWLED = 16
-    PIN_GREENLED = 17
+import pubsub_img.py
 
 
-    GPIO.setup(PIN_TRIGGER, GPIO.OUT)
-    GPIO.setup(PIN_ECHO, GPIO.IN)
+GPIO.setmode(GPIO.BOARD)
 
-    GPIO.output(PIN_TRIGGER, GPIO.LOW)
+PIN_TRIGGER = 18
+PIN_ECHO = 24
+PIN_REDLED = 13
+PIN_YELLOWLED = 16
+PIN_GREENLED = 17
 
-    print ("Waiting for sensor to settle")
 
-    time.sleep(2)
+GPIO.setup(PIN_TRIGGER, GPIO.OUT)
+GPIO.setup(PIN_ECHO, GPIO.IN)
 
-    print ("Calculating distance")
+GPIO.output(PIN_TRIGGER, GPIO.LOW)
 
-    GPIO.output(PIN_TRIGGER, GPIO.HIGH)
+print ("Waiting for sensor to settle")
 
-    time.sleep(0.00001)
+time.sleep(2)
 
-    GPIO.output(PIN_TRIGGER, GPIO.LOW)
+print ("Calculating distance")
 
-finally:
-      GPIO.cleanup()
+GPIO.output(PIN_TRIGGER, GPIO.HIGH)
+
+time.sleep(0.00001)
+
+GPIO.output(PIN_TRIGGER, GPIO.LOW)
+
+GPIO.cleanup()
 
 cam = cv2.VideoCapture(0)
 
 ret, image = cam.read()
-cv2.imshow('imagetest.jpg',image)
-cv2.imwrite('imagetest.jpg', image)
+#cv2.imshow('imagetest.jpg',image)
+# cv2.imwrite('imagetest.jpg', image)
+_, JPEG = cv2.imencode(".jpg", image, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
+JPEG.tofile('DEBUG-original.jpg')
+
+# Base64 encode
+b64 = b64encode(JPEG)
+
+# JSON-encode
+message = { "image": b64.decode("utf-8") }
+messageJSON = json.dumps(message)
+
+setInput(messageJSON)
+
 cam.release()
 cv2.destroyAllWindows()
 
-# !! connect to ericks junk here
+time.sleep(5)
+
 
 response = [0, "hellow world"]
 
