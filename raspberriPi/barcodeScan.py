@@ -4,7 +4,7 @@ import time
 import  numpy as np
 import cv2
 import RPi.GPIO as GPIO
-# from .iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import setInput
+# from .iot.aws-iot-device-sdk-python-v2.samples.pubsub_img import setInput
 
 from iot.aws_iot_device_sdk_python_v2.samples.pubsub_img import ImgDataService
 
@@ -31,7 +31,7 @@ time.sleep(2)
 cam = cv2.VideoCapture(0) 
 
 # function which gets the distance from the ultrasonic sensor
-def getDistance():
+def getDistance() -> float:
     # Send a 10us pulse to trigger the sensor
     GPIO.output(PIN_TRIGGER, GPIO.HIGH)
     time.sleep(0.00001)
@@ -98,7 +98,7 @@ while(True):
         messageJSON = json.dumps(message)
 
         # call iotcore to send image to aws as a json
-        ImgDataService.setInput(messageJSON)
+        ImgDataService.setImg(messageJSON)
 
         # wait a second
         time.sleep(5)

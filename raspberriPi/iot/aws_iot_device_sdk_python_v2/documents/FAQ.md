@@ -13,7 +13,7 @@
 
 ### Where should I start?
 
-If you are just getting started make sure you [install this sdk](https://github.com/aws/aws-iot-device-sdk-python-v2#installation) and then build and run the [basic PubSub](https://github.com/aws/aws-iot-device-sdk-python-v2/tree/main/samples#pubsub)
+If you are just getting started make sure you [install this sdk](https://github.com/aws/aws_iot_device_sdk_python_v2#installation) and then build and run the [basic PubSub](https://github.com/aws/aws_iot_device_sdk_python_v2/tree/main/samples#pubsub)
 
 ### How do I enable logging?
 
@@ -32,8 +32,8 @@ mkdir crt-workspace
 cd crt-workspace
 
 # 2. Clone the repository, you could select the version you would like to use. You can find the awscrt 
-#    version used by the current SDK from the file "./aws-iot-device-sdk-python-v2/setup.py". Update 
-#    the version number in "./aws-iot-device-sdk-python-v2/setup.py" can change the awscrt version 
+#    version used by the current SDK from the file "./aws_iot_device_sdk_python_v2/setup.py". Update 
+#    the version number in "./aws_iot_device_sdk_python_v2/setup.py" can change the awscrt version 
 #    you would like to use in awsiotsdk
 git clone -b <CRT_VERSION> https://github.com/awslabs/aws-crt-python.git
 
@@ -44,7 +44,7 @@ git submodule update --init --recursive
 # 4. (Optional) Setup the version number of your local build. Similar to the awsiotsdk, the default 
 #    version for awscrt is set to "1.0.0-dev", you can set the version number of the local build in 
 #    "./aws-crt-python/awscrt/__init__.py". The awscrt version set here need to match the version 
-#    specified in "./aws-iot-device-sdk-python-v2/setup.py" so that the awsiotsdk could locate the 
+#    specified in "./aws_iot_device_sdk_python_v2/setup.py" so that the awsiotsdk could locate the 
 #    correct awscrt library.
 sed -i "s/__version__ = '1.0.0.dev0'/__version__ = '<CRT_VERSION>'/" awscrt/__init__.py
 
@@ -139,5 +139,5 @@ Here is an example launch.json file to run the pubsub sample
 
 * [Here](https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html) are the AWS IoT Core docs for more details about IoT Core
 * [Here](https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html) are the AWS IoT Greengrass v2 docs for more details about greengrass
-* [Discussion](https://github.com/aws/aws-iot-device-sdk-python-v2/discussions) questions are also a great way to ask other questions about this sdk.
-* [Open an issue](https://github.com/aws/aws-iot-device-sdk-python-v2/issues) if you find a bug or have a feature request
+* [Discussion](https://github.com/aws/aws_iot_device_sdk_python_v2/discussions) questions are also a great way to ask other questions about this sdk.
+* [Open an issue](https://github.com/aws/aws_iot_device_sdk_python_v2/issues) if you find a bug or have a feature request

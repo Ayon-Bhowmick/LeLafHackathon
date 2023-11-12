@@ -10,7 +10,7 @@ Python bindings for the AWS IoT Device API.
 
 Developer Guide: https://docs.aws.amazon.com/iot/latest/developerguide
 
-GitHub: https://github.com/aws/aws-iot-device-sdk-python-v2
+GitHub: https://github.com/aws/aws_iot_device_sdk_python_v2
 
 PyPI: https://pypi.org/project/awsiotsdk/
 

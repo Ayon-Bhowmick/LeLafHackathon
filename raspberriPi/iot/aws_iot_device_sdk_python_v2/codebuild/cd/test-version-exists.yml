@@ -15,5 +15,5 @@ phases:
       - echo "\nPython Version:"; python3 --version
   build:
     commands:
-      - cd $CODEBUILD_SRC_DIR/aws-iot-device-sdk-python-v2
+      - cd $CODEBUILD_SRC_DIR/aws_iot_device_sdk_python_v2
       - bash ./codebuild/cd/test-version-exists.sh $CODEBUILD_SRC_DIR/VERSION
