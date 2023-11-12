@@ -17,5 +17,4 @@ PIN_ROW = 2
 lcd = LCD.Adafruit_CharLCD(PIN_RS, PIN_EN, PIN_D4, PIN_D5, PIN_D6, PIN_D7, PIN_COL, PIN_ROW, PIN_BACKLIGHT)
 
 lcd.message('Hello\nworld!')
-sleep(5)
-lcd.clear()
+
