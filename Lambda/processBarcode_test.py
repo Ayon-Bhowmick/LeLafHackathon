@@ -10,7 +10,7 @@ def readBarcode(img):
     else:
         for barcode in barcodes:
             if barcode.data!="":
-                print(barcode.data)
+                print(barcode.data.decode('utf-8'))
 
 while 1:
     ret, frame = cap.read()
