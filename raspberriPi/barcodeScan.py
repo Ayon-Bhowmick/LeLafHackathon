@@ -98,7 +98,7 @@ while(True):
         messageJSON = json.dumps(message)
 
         # call iotcore to send image to aws as a json
-        ImgDataService.setInput(messageJSON)
+        ImgDataService.setImg(messageJSON)
 
         # wait a second
         time.sleep(5)

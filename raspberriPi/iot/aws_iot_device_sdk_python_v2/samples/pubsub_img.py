@@ -13,7 +13,7 @@ class ImgDataService():
     def getImg():
         return currImg
 
-    def setInput(input):
+    def setImg(input):
         currImg = input   
 
     awsresp = 'None'

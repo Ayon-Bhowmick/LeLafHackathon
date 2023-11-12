@@ -58,6 +58,7 @@ def on_message_received(topic, payload, dup, qos, retain, **kwargs):
     print("Received message from topic hohoho '{}': {}".format(topic, payload))
     global received_count
     received_count += 1
+    pubsub_img.ImgDataService.setresp(payload)
     if received_count == cmdData.input_count:
         received_all_event.set()
 
@@ -145,10 +146,7 @@ if __name__ == '__main__':
             message_json = json.dumps(
                 {
                     "time": int(time.time()),
-                    "quality": "good",
-                    "hostname": "laptop",
-                    "value": psutil.cpu_percent(),
-                    "img": pubsub_img.getImg()
+                    "img": pubsub_img.ImgDataService.getImg()
                 }, indent=2  )
             mqtt_connection.publish(
                 topic=message_topic,
