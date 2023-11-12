@@ -54,7 +54,7 @@ git add ../README.md
 git commit -m "[v$new_version] $RELEASE_TITLE"
 
 # # push the commit and create a PR
-git push -u "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws-iot-device-sdk-python-v2.git" ${new_version_branch}
+git push -u "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws_iot_device_sdk_python_v2.git" ${new_version_branch}
 gh pr create --title "AutoTag PR for v${new_version}" --body "AutoTag PR for v${new_version}" --head ${new_version_branch}
 
 # # Merge the PR
@@ -64,12 +64,12 @@ gh pr merge --admin --squash
 # Update local state with the merged pr (if one was made) and just generally make sure we're up to date
 git fetch
 git checkout main
-git pull "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws-iot-device-sdk-python-v2.git" main
+git pull "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws_iot_device_sdk_python_v2.git" main
 
 # Create new tag on latest commit (lightweight tag - we do NOT want an annotated tag)
 git tag -f v${new_version}
 # Push new tag to github
-git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws-iot-device-sdk-python-v2.git" --tags
+git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/aws/aws_iot_device_sdk_python_v2.git" --tags
 
 # Determine if this is a pre-release or not based on the major version
 IS_PRE_RELEASE="false"

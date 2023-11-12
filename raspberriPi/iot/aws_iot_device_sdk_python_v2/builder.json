@@ -1,5 +1,5 @@
 {
-    "name": "aws-iot-device-sdk-python-v2",
+    "name": "aws_iot_device_sdk_python_v2",
     "hosts": {
         "al2012": {
             "enabled": false,

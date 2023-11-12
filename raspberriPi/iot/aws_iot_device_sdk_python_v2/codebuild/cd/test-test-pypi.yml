@@ -23,7 +23,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - cd $CODEBUILD_SRC_DIR/aws-iot-device-sdk-python-v2
+      - cd $CODEBUILD_SRC_DIR/aws_iot_device_sdk_python_v2
       - CURRENT_TAG_VERSION=$(cat $CODEBUILD_SRC_DIR/VERSION)
       # this is here because typing isn't in test-pypi, so pull it from prod instead
       - python3 -m pip install typing

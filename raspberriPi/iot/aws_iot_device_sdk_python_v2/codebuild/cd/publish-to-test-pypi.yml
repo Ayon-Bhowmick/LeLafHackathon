@@ -16,7 +16,7 @@ phases:
       - echo "\nPython Version:"; python3 --version
   pre_build:
     commands:
-      - cd $CODEBUILD_SRC_DIR/aws-iot-device-sdk-python-v2
+      - cd $CODEBUILD_SRC_DIR/aws_iot_device_sdk_python_v2
       - pypirc=$(aws secretsmanager get-secret-value --secret-id "cd/aws-sdk-python-v2-test/.pypirc" --query "SecretString" | cut -f2 -d\") && echo "$pypirc" > ~/.pypirc
       - export PKG_VERSION=$(cat $CODEBUILD_SRC_DIR/VERSION)
       - echo "Updating package version to ${PKG_VERSION}"

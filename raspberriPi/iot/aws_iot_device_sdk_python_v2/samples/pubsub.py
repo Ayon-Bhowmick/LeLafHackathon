@@ -129,7 +129,7 @@ if __name__ == '__main__':
     # Publish message to server desired number of times.
     # This step is skipped if message is blank.
     # This step loops forever if count was set to 0
-    # C:\Users\erick\Desktop\comp_sci\hackathon\lelaf\LeLafHackathon\iot\aws-iot-device-sdk-python-v2\samples\pubsub.py
+    # C:\Users\erick\Desktop\comp_sci\hackathon\lelaf\LeLafHackathon\iot\aws_iot_device_sdk_python_v2\samples\pubsub.py
     # C:\Users\erick\Desktop\comp_sci\hackathon\lelaf\LeLafHackathon\iot\HuaChen.jpg
     if message_string:
         if message_count == 0:
