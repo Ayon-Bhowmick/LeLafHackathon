@@ -43,11 +43,14 @@ try:
     while 1:
         dist = distance()
         if dist < 10:
+            GPIO.output(PIN_TRASH, GPIO.HIGH)
+            GPIO.output(PIN_REC, GPIO.LOW)
             ret, frame = cap.read()
             cv2.imshow("frame", frame)
         else:
             GPIO.output(PIN_TRASH, GPIO.LOW)
             GPIO.output(PIN_REC, GPIO.HIGH)
+            cv2.destroyAllWindows()
 
 except Exception as e:
     print(e)
