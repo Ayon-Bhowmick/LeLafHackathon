@@ -9,11 +9,11 @@ def lambda_handler(event, context):
 
     barcode = decode(event['image'])
     if not barcode:
-        print("No barcode detected")
+        return {"response": "No barcode detected"}
     else:
         for b in barcode:
             if b.data!="":
                 number = b.data.decode('utf-8')
                 break
         action = r.get(number)
-        print(action)
+        return {"response": action}
